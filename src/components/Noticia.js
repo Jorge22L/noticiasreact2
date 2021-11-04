@@ -4,10 +4,13 @@ const Noticia = ({noticia})=> {
     //EXTRAER DATOS
     const {urlToImage, url, title, description, source} = noticia;
 
-    const imagen = <div className="card-image">
+    //CARGA DE IMAGEN
+    const imagen = (urlToImage) ?
+    <div className="card-image">
         <img src={urlToImage} alt={title} />
         <span className="card-title">{source.name}</span>
     </div>
+    : null;
 
     return(
         <div className="col s12 m6 l4">
